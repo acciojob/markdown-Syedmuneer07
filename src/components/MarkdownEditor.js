@@ -3,7 +3,7 @@ import marked from "marked";
 
 const MarkdownEditor = () => {
   const [markdown, setMarkdown] = useState(
-    "# Markdown Editor\n\nType **Markdown** on the left 👈"
+    "#Hello world"
   );
   const [preview, setPreview] = useState("");
 
