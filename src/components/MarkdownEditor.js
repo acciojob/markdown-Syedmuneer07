@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { marked } from "marked";
+import marked from "marked";
 
 const MarkdownEditor = () => {
-  const [markdown, setMarkdown] = useState("");
-  const [html, setHtml] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [markdown, setMarkdown] = useState(
+    "# Markdown Editor\n\nType **Markdown** on the left 👈"
+  );
+  const [preview, setPreview] = useState("");
 
   useEffect(() => {
-    setLoading(true);
-    setHtml(marked.parse(markdown));
-    setLoading(false);
+    setPreview(marked(markdown));
   }, [markdown]);
 
   return (
@@ -18,17 +17,12 @@ const MarkdownEditor = () => {
         className="textarea"
         value={markdown}
         onChange={(e) => setMarkdown(e.target.value)}
-        placeholder="Enter Markdown here..."
       />
 
-      {loading ? (
-        <div className="loading">Loading...</div>
-      ) : (
-        <div
-          className="preview"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      )}
+      <div
+        className="preview"
+        dangerouslySetInnerHTML={{ __html: preview }}
+      />
     </>
   );
 };
