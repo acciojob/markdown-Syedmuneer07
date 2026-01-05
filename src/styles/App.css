@@ -1,12 +1,49 @@
 h1 {
     color: #27aedb;
     text-align: center;
-    }
-    
+}
 
 button{
     color: #27aedb;
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.app {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
+
+.markdown-editor {
+  display: flex;
+  border: 1px solid #eee;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  height: 60vh;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ddd;
+  resize: none;
+}
+
+.preview {
+  width: 100%;
+  height: 60vh;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  overflow: auto;
+  background: #fafafa;
+}
+
+.loading {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
